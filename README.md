@@ -1,0 +1,2 @@
+# CNews
+Crowdsourcing news portal
