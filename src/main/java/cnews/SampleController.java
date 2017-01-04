@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.*;
 public class SampleController {
 
   @RequestMapping("/")
-  @ResponseBody
-  String home() {
-    return "Happy New Year 2017!";
+  public String home() {
+    return "main";
   }
+
+
 
   public static void main(String[] args) throws Exception {
     SpringApplication.run(SampleController.class, args);
