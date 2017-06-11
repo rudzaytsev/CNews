@@ -22,8 +22,12 @@
         <li><a href="#">Politics</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign up</a></li>
-        <li><a href="#loginModal" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
+        <#if user??>
+          <li><a href="#"> logged as ${user.login}</a></li>
+        <#else>
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign up</a></li>
+          <li><a href="#loginModal" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
+        </#if>
       </ul>
     </div>
   </nav>
