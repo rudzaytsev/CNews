@@ -30,5 +30,9 @@
              <column name="login" value="rabbit"/>
              <column name="password" value="12345"/>
          </insert>
+         <insert catalogName="testdb" tableName="users" dbms="h2, oracle">
+             <column name="login" value="testuser"/>
+             <column name="password" value="12345"/>
+         </insert>
      </changeSet>
 </databaseChangeLog>
