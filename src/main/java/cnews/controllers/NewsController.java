@@ -2,6 +2,7 @@ package cnews.controllers;
 
 
 import cnews.modals.User;
+
 import cnews.services.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,6 +12,8 @@ import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class NewsController {
@@ -27,10 +30,15 @@ public class NewsController {
   }
 
   @RequestMapping(value = "/login", method = RequestMethod.POST)
-  public String login(@RequestParam String login, @RequestParam String password, Model model) {
+  public String login(@RequestParam String login, @RequestParam String password, Model model,
+                      HttpServletResponse response) {
     logger.info("Log in method invoked!!!");
-    if (userService.isExist(login, password)){
+    if (userService.isExist(login, password)) {
       model.addAttribute("user", new User(login, password));
+    }
+    else {
+      response.setStatus(500);
+      model.addAttribute("error", "Error. Incorrect login or password");
     }
     return "main";
   }

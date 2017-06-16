@@ -63,8 +63,15 @@
     </div>
   </div>
 
+
   <div class="container">
-    <h1>Welcome!</h1>
+    <#if error??>
+    <div class="alert alert-warning alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      ${error}
+    </div>
+    </#if>
+      <h1>Welcome!</h1>
     <div class="row">
       <div class="col-md-4">
         <div class="thumbnail">
@@ -97,6 +104,7 @@
         </div>
       </div>
     </div>
+
   </div>
 
 </body>
