@@ -23,10 +23,10 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <#if user??>
-          <li><a href="#"> logged as ${user.login}</a></li>
+          <li><a id="logged-user" href="#"> logged as ${user.login}</a></li>
         <#else>
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign up</a></li>
-          <li><a href="#loginModal" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
+          <li><a id="sign-up-link" href="#"><span class="glyphicon glyphicon-user"></span>Sign up</a></li>
+          <li><a id="login-form-link" href="#loginModal" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
         </#if>
       </ul>
     </div>
@@ -55,7 +55,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-info">Log in</button>
+            <button id="login-btn" type="submit" class="btn btn-info">Log in</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
           </div>
         </div>
@@ -66,7 +66,7 @@
 
   <div class="container">
     <#if error??>
-    <div class="alert alert-warning alert-danger">
+    <div class="alert alert-danger">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       ${error}
     </div>

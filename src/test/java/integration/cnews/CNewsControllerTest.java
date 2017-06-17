@@ -25,7 +25,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @WebAppConfiguration
 @ContextConfiguration("/test-servlet-context.xml")
-@ActiveProfiles("test")
 public class CNewsControllerTest {
 
   @Autowired

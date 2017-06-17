@@ -8,6 +8,9 @@
 
 
      <changeSet id="1" author="rudzaytsev">
+         <preConditions>
+             <not><tableExists tableName="users"/></not>
+         </preConditions>
          <createTable catalogName="testdb" tableName="users">
              <column name="id" type="long" autoIncrement="true">
                  <constraints primaryKey="true" nullable="false"/>
@@ -21,7 +24,14 @@
          </createTable>
      </changeSet>
 
+
      <changeSet id="2" author="rudzaytsev">
+         <preConditions>
+             <and>
+                 <tableExists tableName="users"/>
+                 <tableIsEmpty tableName="users"/>
+             </and>
+         </preConditions>
          <insert catalogName="testdb" tableName="users" dbms="h2, oracle">
              <column name="login" value="winni"/>
              <column name="password" value="123"/>
