@@ -53,6 +53,7 @@
                 <input type="password" class="form-control" id="password" name="password" placeholder="Enter password"/>
               </div>
             </div>
+           <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
           </div>
           <div class="modal-footer">
             <button id="login-btn" type="submit" class="btn btn-info">Log in</button>

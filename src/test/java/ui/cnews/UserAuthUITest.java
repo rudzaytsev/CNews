@@ -9,7 +9,8 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.test.context.ActiveProfiles;
+import org.springframework.boot.SpringApplication;
+
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -31,7 +32,7 @@ public class UserAuthUITest {
 
   @BeforeClass
   public static void init() throws Exception {
-    CNewsApp.main(new String[]{});
+    SpringApplication.run(CNewsApp.class);
   }
 
   @Before
